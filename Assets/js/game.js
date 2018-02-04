@@ -20,22 +20,32 @@ function gameStart () {
     individualLetters = randomWord.split("");
     wordBlanks = individualLetters.length;
 
+    //Resets game
+    wrongGuesses = [];
+    guessesLeft = 10;
+    blankAndRightLetters = [];
+
+
 
     //allows for the right number of blanks
     for (var i=0; i<wordBlanks; i++){
         blankAndRightLetters.push("_");
     }
+    
+    //Populates the word to guess with the correct number of blank spaces
+    document.getElementById("wordToGuess").innerHTML = blankAndRightLetters.join(" ");
+    document.getElementById("guesses").innerHTML = guessesLeft;
+    document.getElementById("losses").innerHTML = losses;
+    document.getElementById("wins").innerHTML = wins;
+
+
     console.log(randomWord);
     console.log(individualLetters);
     console.log(wordBlanks);
     console.log(blankAndRightLetters);
-
-    //Resets game
-    wrongGuesses = [];
-    guessesLeft = 10;
-    blankAndRightLetters = [];
+  
     
-    //Populates the word to guess with the correct number of blank spaces
-    document.getElementById("word").innerHTML = blankAndRightLetters.join(" ");
+    
+    
 
 }
