@@ -33,9 +33,9 @@ function gameStart () {
     
     //Populates the word to guess with the correct number of blank spaces
     document.getElementById("wordToGuess").innerHTML = blankAndRightLetters.join(" ");
-    document.getElementById("guesses").innerHTML = guessesLeft;
-    document.getElementById("losses").innerHTML = losses;
-    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("guessesLeft").innerHTML = guessesLeft;
+    document.getElementById("lossCounter").innerHTML = losses;
+    document.getElementById("winCounter").innerHTML = wins;
 
 
     console.log(randomWord);
@@ -76,14 +76,25 @@ console.log(blankAndRightLetters);
 
 function roundComplete() {
     console.log("Win Count: " + wins + " | Loss Count: " + losses + " | Guesses Left" + guessesLeft);
+    //Update the HTML to add correct letters to the spaces
+    document.getElementById("guessesLeft").innerHTML = guessesLeft;
+    document.getElementById("wordToGuess").innerHTML = blankAndRightLetters.join(" ");
+    document.getElementById("wrongGuesses").innerHTML = wrongGuesses.join(" ");
+    
     //check if user won
-    if (wordLetters.toString() == blankAndRightLetters.toString()){
+    if (individualLetters.toString() == blankAndRightLetters.toString()){
         wins++
-        alert("You Won!")
+        alert("You Won!");
         document.getElementById("winCounter").innerHTML = wins;
         gameStart();
     }
     //check if user lost
+    else if(guessesLeft == 0) {
+        losses++
+        alert("You Lost!");
+        document.getElementById("lossCounter").innerHTML = losses;
+        gameStart();
+    }
 }
 
 
