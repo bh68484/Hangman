@@ -97,6 +97,11 @@ function roundComplete() {
     }
 }
 
+$(".a-button").on("click", function() {
+    $(".a-button").animate({ opacity: "0.00" });
+  });
+
+
 
 //Main Process
 //Initates the code
