@@ -4,8 +4,6 @@ h1 {
 .panel-body {
     background: #b30000;
     color: white;
-    border-color: red;
-    border-width: 10px
 }
 #pizzaTitle {
     padding-left: 60px;

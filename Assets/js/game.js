@@ -1,5 +1,5 @@
 //An array to hold the avaliable words for hangman
-    var listOfWords = ["mozzarella", "dough", "pizza", "pepperoni", "margherita", "knead", "neapolitan", "tomatoes", "sauce", "flour", "hawaiian", "toppings"];
+    var listOfWords = ["mozzarella", "dough", "pizza", "pepperoni", "margherita", "knead", "neapolitan", "tomatoes", "sauce", "flour", "hawaiian", "toppings", "marinara", "oven", "peel", "cheese", "pesto", "garlic", "parmesan", "cheddar", "supreme"];
     var randomWord = "";
     var wordLetters = [];
     var wordBlanks = 0;
