@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+.panel-body {
+    background: #b30000;
+    color: white;
+    border-color: red;
+    border-width: 10px
+}
+#pizzaTitle {
+    padding-left: 60px;
+}
+
+body {
+    background-image: url("../images/background.png");
+    color: black;
+    line-height: 2.5;
+}

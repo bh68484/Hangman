@@ -1,16 +1,14 @@
-//Global Variables
-
-    //An array to hold the avaliable words for hangman
-var listOfWords = ["mozzarella", "dough", "pizza", "pepperoni", "margherita", "knead", "neapolitan", "tomatoes", "sauce", "deep-dish", "flour", "hawaiian", "toppings"];
-var randomWord = "";
-var wordLetters = [];
-var wordBlanks = 0;
-var blankAndRightLetters = [];
-var wrongGuesses = [];
-    //Win and Lose counter, along with the number of guesses left
-var wins = 0;
-var losses = 0;
-var guessesLeft = 10;
+//An array to hold the avaliable words for hangman
+    var listOfWords = ["mozzarella", "dough", "pizza", "pepperoni", "margherita", "knead", "neapolitan", "tomatoes", "sauce", "flour", "hawaiian", "toppings"];
+    var randomWord = "";
+    var wordLetters = [];
+    var wordBlanks = 0;
+    var blankAndRightLetters = [];
+    var wrongGuesses = [];
+//Win and Lose counter, along with the number of guesses left
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 10;
 
 
 //Functions
@@ -19,42 +17,41 @@ function gameStart () {
     individualLetters = randomWord.split("");
     wordBlanks = individualLetters.length;
 
-    //Resets game
+   //Resets game
     wrongGuesses = [];
     guessesLeft = 10;
     blankAndRightLetters = [];
 
-
-
-    //allows for the right number of blanks
+//Allows for the right number of blanks
     for (var i=0; i<wordBlanks; i++){
         blankAndRightLetters.push("_");
     }
     
-    //Populates the word to guess with the correct number of blank spaces
+//Populates the word to guess with the correct number of blank spaces
     document.getElementById("wordToGuess").innerHTML = blankAndRightLetters.join(" ");
     document.getElementById("guessesLeft").innerHTML = guessesLeft;
     document.getElementById("lossCounter").innerHTML = losses;
     document.getElementById("winCounter").innerHTML = wins;
 
-
+    //Debugging in console
     console.log(randomWord);
     console.log(individualLetters);
     console.log(wordBlanks);
     console.log(blankAndRightLetters);
 }
-//check letter exist in word
-function checkLetters (letter) {
-// check if letter exists in code at all
 
-var isLetterInWord = false;
-for (var i=0; i<wordBlanks; i++){
+//Check letter exist in word
+    function checkLetters (letter) {
+// Check if letter exists in code at all
+
+    var isLetterInWord = false;
+    for (var i=0; i<wordBlanks; i++){
     if (randomWord[i] == letter){
         isLetterInWord = true;
         // alert("letter");
     }
 }
-//check where in the word letter exist - populate blank and success array
+//Check where in the word letter exist - Populate blank and successes array
 if(isLetterInWord) {
   for (var i=0; i<wordBlanks; i++) {
     if(randomWord[i] == letter) {
@@ -62,33 +59,30 @@ if(isLetterInWord) {
         }
     }  
 }
-
-//letter wasnt found
+//Letter wasnt found
 else {
     wrongGuesses.push(letter);
     guessesLeft--
 }
-
+//Debugging
 console.log(blankAndRightLetters);
-
-
 }
-
+//Function for completing the round
 function roundComplete() {
     console.log("Win Count: " + wins + " | Loss Count: " + losses + " | Guesses Left" + guessesLeft);
     //Update the HTML to add correct letters to the spaces
     document.getElementById("guessesLeft").innerHTML = guessesLeft;
     document.getElementById("wordToGuess").innerHTML = blankAndRightLetters.join(" ");
     document.getElementById("wrongGuesses").innerHTML = wrongGuesses.join(" ");
-    
-    //check if user won
+//Check if user won - Add to wins - Wait a second, show alert, and reset game
     if (individualLetters.toString() == blankAndRightLetters.toString()){
         wins++
-        alert("You Won!");
         document.getElementById("winCounter").innerHTML = wins;
-        gameStart();
+        setTimeout(function(){gameStart();}, 1000);
+        setTimeout(function(){alert("You Won!");;}, 1000);
+        
     }
-    //check if user lost
+//Check if user lost - wait a second, show alert, and reset game
     else if(guessesLeft == 0) {
         losses++
         alert("You Lost!");
@@ -96,22 +90,13 @@ function roundComplete() {
         gameStart();
     }
 }
-
-$(".a-button").on("click", function() {
-    $(".a-button").animate({ opacity: "0.00" });
-  });
-
-
-
 //Main Process
 //Initates the code
-
-
 gameStart();
     document.onkeyup = function(event) {
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetters(letterGuessed);
     roundComplete();
-// debugging
+//Debugging
     console.log(letterGuessed);
 }
