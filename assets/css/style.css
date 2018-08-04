@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+    
 }
 .panel-body {
     background: #b30000;
@@ -13,4 +14,8 @@ body {
     background-image: url("../images/background.png");
     color: black;
     line-height: 2.5;
+    
+}
+h3{
+    font-family: 'Cherry Cream Soda', cursive;
 }
