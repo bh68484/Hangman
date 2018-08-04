@@ -1,5 +1,5 @@
 //An array to hold the avaliable words for hangman
-var listOfWords = [
+const listOfWords = [
   "mozzarella",
   "dough",
   "pizza",
@@ -22,15 +22,15 @@ var listOfWords = [
   "cheddar",
   "supreme"
 ];
-var randomWord = "";
-var wordLetters = [];
-var wordBlanks = 0;
-var blankAndRightLetters = [];
-var wrongGuesses = [];
+let randomWord = "";
+let wordLetters = [];
+let wordBlanks = 0;
+let blankAndRightLetters = [];
+let wrongGuesses = [];
 //Win and Lose counter, along with the number of guesses left
-var wins = 0;
-var losses = 0;
-var guessesLeft = 10;
+let wins = 0;
+let losses = 0;
+let guessesLeft = 10;
 
 //Functions
 function gameStart() {
