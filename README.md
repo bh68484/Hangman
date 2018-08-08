@@ -8,6 +8,14 @@ Using the keyboard, the user guesses a letter and the game will check to see if 
 
 The game will keep track of the wins and losses as each round is played.
 
+## Example of Gameplay
+
 ## Live Deployment
 
 - [Pizza Hangman](https://bh68484.github.io/Hangman/) - Game Link
+
+## Built With
+
+- HTML
+- CSS
+- JavaScript
