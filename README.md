@@ -8,7 +8,7 @@ Using the keyboard, the user guesses a letter and the game will check to see if 
 
 The game will keep track of the wins and losses as each round is played.
 
-## Example of Gameplay
+## Example of Gameplay - Click image to view.
 
 [![Pizza Hangman](https://raw.githubusercontent.com/bh68484/Hangman/master/demo/demo.jpg)](https://www.youtube.com/watch?v=r7JBFpDkCfY&feature=youtu.be "Pizza Hangman")
 
