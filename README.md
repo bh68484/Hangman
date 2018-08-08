@@ -10,6 +10,8 @@ The game will keep track of the wins and losses as each round is played.
 
 ## Example of Gameplay
 
+[![Pizza Hangman](https://raw.githubusercontent.com/bh68484/Hangman/master/demo/demo.jpg)](https://www.youtube.com/watch?v=r7JBFpDkCfY&feature=youtu.be "Pizza Hangman")
+
 ## Live Deployment
 
 - [Pizza Hangman](https://bh68484.github.io/Hangman/) - Game Link
